@@ -1,0 +1,7 @@
+<p>Enter your first and last name.</p>
+
+<%= form_tag :validate do %>
+  <%= text_field_tag :first_name %>
+  <%= text_field_tag :last_name %>
+  <%= submit_tag 'Find Reservation' %>
+<% end %>

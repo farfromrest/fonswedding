@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+derek = Guest.create(first_name: 'Derek', last_name: 'Fons')
+john = Guest.create(first_name: 'John', last_name: 'Doe')
+jane = Guest.create(first_name: 'Jane', last_name: 'Doe', guest: john)
+john.guest = jane
+john.save

@@ -3,6 +3,5 @@ class WelcomeController < ApplicationController
   end
 
   def preview
-    guest = Guest.all.first
   end
 end

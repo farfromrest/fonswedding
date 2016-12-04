@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  rsvpd: false
-  guest: one
+john:
+  first_name: John
+  last_name: Doe
+  rsvp: true
+  guest: jane
 
-two:
-  first_name: MyString
-  last_name: MyString
-  rsvpd: false
-  guest: two
+jane:
+  first_name: Jane
+  last_name: Doe
+  rsvp: false
+  guest: john

@@ -24,7 +24,7 @@ class RsvpController < ApplicationController
     unless params[:rsvp].nil?
       @guest.update(rsvp: params[:rsvp] == 'true')
       @guest.guest.update(rsvp: params[:rsvp_for_guest] == 'true') if @guest.guest && params[:rsvp_for_guest] != 'not sure'
-      # RsvpMailer.guest_rsvp(@guest).deliver
+      RsvpMailer.guest_rsvp(@guest).deliver
       redirect_to :success
     end
 

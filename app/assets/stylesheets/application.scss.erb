@@ -1,0 +1,227 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+$phone: 'only screen and (max-width : 736px)';
+$tablet: 'only screen and (max-width : 1024px)';
+
+$jellay: #6e316c;
+$peanut-butter: #b77c2a;
+$tan: #bb9055;
+$white: #f2efe8;
+$brown: #d6c49c;
+$black: #553B22;
+$red: #820024;
+
+
+@mixin background-image($file, $type) {
+  background-image: image-url($file + "." + $type);
+
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    background-image: image-url($file + "@2x." + $type);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  background: transparent;
+}
+
+body {
+  background: -webkit-linear-gradient(left, $brown, $white, $brown);
+  font-family: 'Breathe';
+  color: $black;
+  font-size: 25px;
+
+  @media #{$phone} {
+    font-size: 18px;
+  }
+}
+
+strong {
+  color: $jellay;
+}
+
+.wrapper {
+  @include background-image('flower', 'png');
+  background-size: 171px 79px;
+  background-repeat: no-repeat;
+  background-position: 50% -20px;
+  padding-top: 100px;
+  padding-bottom: 250px;
+  text-align: center;
+  min-height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+
+  @media #{$phone} {
+    padding-bottom: 60vw;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+.welcome-header {
+  @include background-image('hearts', 'png');
+  background-size: 85px 47px;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  padding-top: 80px;
+}
+
+.title,
+.smaller-title,
+.date {
+  font-family: 'BlingtasticScript';
+}
+
+.title {
+  font-size: 3em;
+  color: $jellay;
+
+  .divider {
+    color: $black;
+  }
+
+  .peanut-butter {
+    color: $peanut-butter;
+  }
+}
+
+.date {
+  background-image: image-url('left-leaf.svg'), image-url('right-leaf.svg');
+  background-size: 33px auto;
+  background-repeat: no-repeat;
+  background-position: 0 44%, 100% 44%;
+  font-size: 1.5em;
+  letter-spacing: 3.8px;
+  display: inline-block;
+  padding: 1em 50px;
+}
+
+.smaller-title {
+  font-size: 2em;
+}
+
+.text {
+  padding: 1em 0;
+  line-height: 1.25;
+  letter-spacing: 1.5px;
+
+  a {
+    text-decoration: underline;
+  }
+
+  @media #{$phone} {
+    font-size: 0.75em;
+  }
+}
+
+
+.name-field {
+  color: $black;
+  border: 2px solid $tan;
+  width: 10em;
+  padding: 0.25em;
+  background-color: $white;
+  border-radius: 0.5em;
+  text-indent: 0.25em;
+  &::-webkit-input-placeholder {
+    color: lighten($brown, 5%);
+  }
+}
+
+.rsvp-link, .submit-button {
+  display: inline-block;
+  color: $white;
+  padding: 0.25em 0.8em;
+  background-color: $tan;
+  border-radius: 2em;
+  line-height: 1;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin: 0.5em 0 0 0;
+
+}
+
+
+.form-field-row {
+  padding: 0 0 0.5em 0;
+}
+
+
+.reservation-lookup-form {
+  .label {
+    display: block;
+  }
+}
+
+.reservation-confirm-form {
+  .label {
+    color: $tan;
+  }
+}
+
+.radio-button {
+  vertical-align: top;
+  margin: 0.2em 0.15em 0 0.5em;
+}
+
+
+.details-link {
+  display: block;
+  margin-top: 1em;
+  text-decoration: underline;
+  color: $tan;
+}
+
+.error {
+  color: $red;
+  padding: 1.5em 0;
+}
+
+.bride-and-groom {
+  @include background-image('peanut-jellay', 'png');
+  background-size: auto 200px;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+
+  @media #{$phone} {
+    width: calc(100% - 2em);
+    background-size: 90% auto;
+    height: 50vw;
+  }
+}

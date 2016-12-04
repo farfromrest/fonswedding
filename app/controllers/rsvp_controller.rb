@@ -16,17 +16,15 @@ class RsvpController < ApplicationController
   end
 
   def confirm
-    @guest = Guest.find_by_token params[:token]
+    @guest = Guest.find_by(token: params[:token])
 
     redirect_to :rsvp unless @guest
 
-    if params[:rsvpd]
-      @guest.rsvpd = true
-      @guest.save
-      if params[:rsvp_for_guest]
-        @guest.guest.rsvpd = true
-        @guest.guest.save
-      end
+
+    unless params[:rsvp].nil?
+      @guest.update(rsvp: params[:rsvp] == 'true')
+      @guest.guest.update(rsvp: params[:rsvp_for_guest] == 'true') if @guest.guest && params[:rsvp_for_guest] != 'not sure'
+      # RsvpMailer.guest_rsvp(@guest).deliver
       redirect_to :success
     end
 
@@ -34,5 +32,6 @@ class RsvpController < ApplicationController
 
   def success
     @guest = Guest.find_by_token params[:token]
+    puts @guest.rsvp
   end
 end

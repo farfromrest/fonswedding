@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20161203033950) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "token"
-    t.boolean  "rsvpd",      default: false
+    t.boolean  "rsvp"
     t.integer  "guest_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["guest_id"], name: "index_guests_on_guest_id", using: :btree
   end
 

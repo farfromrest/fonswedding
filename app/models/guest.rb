@@ -1,5 +1,5 @@
 class Guest < ApplicationRecord
-  belongs_to :guest
+  belongs_to :guest, optional: true
   before_create :generate_token
 
   protected

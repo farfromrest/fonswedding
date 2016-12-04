@@ -1,16 +1,24 @@
-<p>Yay! We are so excited you will be attending our wedding <%= @guest.first_name %>! Please confirm your RSVP by clicking the button below.</p>
+<p>Hello <%= @guest.first_name %>! Please RSVP below.</p>
 
 <%= form_tag :confirm_submit do %>
   <%= hidden_field_tag :token, @guest.token %>
-  <%= hidden_field_tag :rsvpd, true %>
-  <% if @guest.guest && !@guest.guest.rsvpd %>
-    <p>We also have you bringing <%= @guest.guest.first_name %> <%= @guest.guest.last_name %> with you.</p>
-    <p>Would you like to also RSVP on their behalf as well?</p>
+
+  <p>Will you be able to make our big day?</p>
+  <%= radio_button_tag :rsvp, true, checked: true %>
+  <%= label_tag :rsvp_true, 'Yes' %>
+  <%= radio_button_tag :rsvp, false %>
+  <%= label_tag :rsvp_false, 'No' %>
+
+  <% if @guest.guest %>
+    <p>We also have <%= @guest.guest.first_name %> <%= @guest.guest.last_name %> joining you. Will they be coming?</p>
     <%= radio_button_tag :rsvp_for_guest, true, checked: true %>
     <%= label_tag :rsvp_for_guest_true, 'Yes' %>
     <%= radio_button_tag :rsvp_for_guest, false %>
     <%= label_tag :rsvp_for_guest_false, 'No' %>
+    <%= radio_button_tag :rsvp_for_guest, 'not sure' %>
+    <%= label_tag :rsvp_for_guest_not_sure, 'Not sure' %>
   <% end %>
 
-  <%= submit_tag 'RSVP' %>
+
+  <%= submit_tag "Submit" %>
 <% end %>

@@ -4,7 +4,7 @@ class CreateGuests < ActiveRecord::Migration[5.0]
       t.string :first_name
       t.string :last_name
       t.string :token
-      t.boolean :rsvpd, default: false
+      t.boolean :rsvp
       t.references :guest, foreign_key: true, references: :guests
       t.timestamps
     end

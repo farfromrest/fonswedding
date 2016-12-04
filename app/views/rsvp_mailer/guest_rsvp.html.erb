@@ -1,0 +1,7 @@
+<% if @guest.rsvp %>
+<h1>Someone said yes...</h1>
+<p><%= @guest.first_name %> <%= @guest.last_name %> just confirmed they will be joining you for your big day!</p>
+<% else %>
+<h1>Sorry, someone won't be making it</h1>
+<p><%= @guest.first_name %> <%= @guest.last_name %> just confirmed won't be able to join you for your big day.</p>
+<% end %>

@@ -1,1 +1,5 @@
-<p>We got your RSVP saved. Cannot wait to see you<% if @guest.guest && @guest.guest.rsvpd %> and <%= @guest.guest.first_name %> <% end %> on <%= ApplicationHelper::WEDDING_DATE.to_formatted_s(:long_ordinal) %>!</p>
+<% if @guest.rsvp %>
+<p>We got your RSVP saved. Cannot wait to see you on <%= ApplicationHelper::WEDDING_DATE.to_formatted_s(:long_ordinal) %>!</p>
+<% else %>
+<p>Sorry, you can't make it. If anything changes you can always come back and update your RSVP.</p>
+<% end %>

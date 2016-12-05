@@ -46,3 +46,19 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  background: transparent;
+}

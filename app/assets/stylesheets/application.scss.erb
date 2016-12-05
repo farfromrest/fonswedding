@@ -1,62 +1,14 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
+ *= require reset
  */
 
-$phone: 'only screen and (max-width : 736px)';
-$tablet: 'only screen and (max-width : 1024px)';
-
-$jellay: #6e316c;
-$peanut-butter: #b77c2a;
-$tan: #bb9055;
-$white: #f2efe8;
-$brown: #d6c49c;
-$black: #553B22;
-$red: #820024;
-
-
-@mixin background-image($file, $type) {
-  background-image: image-url($file + "." + $type);
-
-  @media only screen and (min-device-pixel-ratio: 2),
-    only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-    background-image: image-url($file + "@2x." + $type);
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-input {
-  font: inherit;
-  color: inherit;
-  border: 0;
-  padding: 0;
-  margin: 0;
-  outline: 0;
-  background: transparent;
-}
+@import 'colors';
+@import 'vars';
+@import 'fonts';
+@import 'mixins';
 
 body {
-  background: -webkit-linear-gradient(left, $brown, $white, $brown);
+  background: linear-gradient(to right, $brown, $white, $brown);
   font-family: 'Breathe';
   color: $black;
   font-size: 25px;
@@ -68,6 +20,7 @@ body {
 
 strong {
   color: $jellay;
+  text-decoration: underline;
 }
 
 .wrapper {
@@ -88,6 +41,11 @@ strong {
     padding-left: 1em;
     padding-right: 1em;
   }
+}
+
+.error {
+  color: $red;
+  padding: 1.5em 0;
 }
 
 .welcome-header {
@@ -117,6 +75,10 @@ strong {
   }
 }
 
+.smaller-title {
+  font-size: 2em;
+}
+
 .date {
   background-image: image-url('left-leaf.svg'), image-url('right-leaf.svg');
   background-size: 33px auto;
@@ -128,9 +90,6 @@ strong {
   padding: 1em 50px;
 }
 
-.smaller-title {
-  font-size: 2em;
-}
 
 .text {
   padding: 1em 0;
@@ -146,6 +105,13 @@ strong {
   }
 }
 
+.form-field-row {
+  padding: 0 0 0.5em 0;
+}
+
+.label {
+  color: $tan;
+}
 
 .name-field {
   color: $black;
@@ -160,6 +126,11 @@ strong {
   }
 }
 
+.radio-button {
+  vertical-align: top;
+  margin: 0.2em 0.15em 0 0.5em;
+}
+
 .rsvp-link, .submit-button {
   display: inline-block;
   color: $white;
@@ -170,32 +141,7 @@ strong {
   letter-spacing: 2px;
   cursor: pointer;
   margin: 0.5em 0 0 0;
-
 }
-
-
-.form-field-row {
-  padding: 0 0 0.5em 0;
-}
-
-
-.reservation-lookup-form {
-  .label {
-    display: block;
-  }
-}
-
-.reservation-confirm-form {
-  .label {
-    color: $tan;
-  }
-}
-
-.radio-button {
-  vertical-align: top;
-  margin: 0.2em 0.15em 0 0.5em;
-}
-
 
 .details-link {
   display: block;
@@ -204,16 +150,12 @@ strong {
   color: $tan;
 }
 
-.error {
-  color: $red;
-  padding: 1.5em 0;
-}
-
 .bride-and-groom {
   @include background-image('peanut-jellay', 'png');
   background-size: auto 200px;
   background-repeat: no-repeat;
   background-position: 50% 100%;
+  display: block;
   position: absolute;
   bottom: 0;
   width: 100%;

@@ -1,0 +1,9 @@
+@mixin background-image($file, $type) {
+  background-image: image-url($file + "." + $type);
+
+  @media only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    background-image: image-url($file + "@2x." + $type);
+  }
+}

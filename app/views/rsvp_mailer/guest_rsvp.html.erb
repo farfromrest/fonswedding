@@ -1,7 +1,18 @@
 <% if @guest.rsvp %>
-<h1>Someone said yes...</h1>
-<p><%= @guest.first_name %> <%= @guest.last_name %> just confirmed they will be joining you for your big day!</p>
+  <h1>Someone said yes...</h1>
+  <p><%= @guest.first_name %> <%= @guest.last_name %> just confirmed they will be joining you for your big day!</p>
 <% else %>
-<h1>Sorry, someone won't be making it</h1>
-<p><%= @guest.first_name %> <%= @guest.last_name %> just confirmed won't be able to join you for your big day.</p>
+  <h1>Sorry, someone won't be making it</h1>
+  <p><%= @guest.first_name %> <%= @guest.last_name %> just confirmed won't be able to join you for your big day.</p>
+<% end %>
+
+<% if @guest.guest %>
+  <p><%= @guest.guest.first_name %> <%= @guest.guest.last_name %>
+  <% if @guest.guest.rsvp %>
+    will be going.</p>
+  <% elsif @guest.guest.rsvp == false %>
+    won't be making it.</p>
+  <% else %>
+    didn't have their rsvp updated.</p>
+  <% end %>
 <% end %>

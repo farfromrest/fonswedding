@@ -1,7 +1,7 @@
 <h1 class="smaller-title">Hey <%= @guest.first_name %>!</h1>
 <p class="text">Because you have shared in our lives
 and supported our love, we have requested  the pleasure of your company
-at our marriage. Please use the form to complete your RSVP.</p>
+at our marriage. Please use this form to complete your RSVP.</p>
 
 <%= form_tag :confirm_submit, class: 'reservation-confirm-form' do %>
   <%= hidden_field_tag :token, @guest.token %>

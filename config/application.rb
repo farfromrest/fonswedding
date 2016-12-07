@@ -10,5 +10,6 @@ module Wedding
   class Application < Rails::Application
     config.from_email = 'noreply@fonswedding.com'
     config.notify_email = 'derek@farfromrest.com'
+    config.time_zone = 'Central Time (US & Canada)'
   end
 end

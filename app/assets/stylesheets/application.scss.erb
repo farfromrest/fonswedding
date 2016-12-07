@@ -100,9 +100,43 @@ strong {
     text-decoration: underline;
   }
 
+  &.note {
+    color: lighten($black, 35%);
+  }
+
   @media #{$phone} {
     font-size: 0.75em;
   }
+}
+
+.address {
+  .smaller-title {
+    padding: .5em 0 0;
+  }
+  .text {
+    padding: 0.25em 0 1em;
+  }
+}
+
+.note {
+  padding-top: 40px;
+}
+
+.bee,
+.bee2 {
+  background-size: auto 30px;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  padding-bottom: 2em;
+}
+
+.bee {
+  background-image: image-url('bee.svg');
+  padding-top: 0;
+}
+
+.bee2 {
+  background-image: image-url('bee2.svg');
 }
 
 .form-field-row {

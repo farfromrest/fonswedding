@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
   end
 
   def details
-    @days = (ApplicationHelper::WEDDING_DATE - Date.today).to_i
+    @days = (ApplicationHelper::WEDDING_DATE - Date.current).to_i
   end
 
 end

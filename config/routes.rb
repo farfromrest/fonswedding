@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'rsvp', to: 'rsvp#index', as: 'rsvp'
   get 'rsvp/confirm/:token', to: 'rsvp#confirm', as: 'confirm'
   post 'rsvp/confirm/:token', to: 'rsvp#confirm', as: 'confirm_submit'
-  get 'rsvp/success', to: 'rsvp#success', as: 'success'
+  get 'rsvp/success/:token', to: 'rsvp#success', as: 'success'
   post 'rsvp/validate', as: 'validate'
   get 'gift', to: 'gift#index', as: 'gift'
   post 'gift/confirm', to: 'gift#confirm', as: 'gift_confirm'

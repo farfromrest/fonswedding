@@ -1,12 +1,12 @@
 <h2 class="smaller-title">Reservation Lookup</h2>
-<p class="text">We are very excited for our wedding and really hope you can make it. Please let us know either way by looking up your reservation by your name.</p>
+<p class="longer-text">We are very excited for our wedding and really hope you can make it. Please let us know either way by looking up your reservation by your name.</p>
 
 <%= form_tag :validate, class: 'reservation-lookup-form' do %>
   <div class="form-field-row">
-    <%= text_field_tag :first_name, '', class: 'name-field', placeholder: 'First Name' %>
+    <%= text_field_tag :first_name, '', class: 'text-field', placeholder: 'First Name' %>
   </div>
   <div class="form-field-row">
-    <%= text_field_tag :last_name, '', class: 'name-field', placeholder: 'Last Name' %>
+    <%= text_field_tag :last_name, '', class: 'text-field', placeholder: 'Last Name' %>
   </div>
   <%= submit_tag 'Find Reservation', class: 'submit-button' %>
 <% end %>

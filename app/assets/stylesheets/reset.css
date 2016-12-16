@@ -53,6 +53,8 @@ a {
   text-decoration: none;
   color: inherit;
 }
+textarea,
+select,
 input {
   font: inherit;
   color: inherit;

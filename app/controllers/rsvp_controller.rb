@@ -32,6 +32,5 @@ class RsvpController < ApplicationController
 
   def success
     @guest = Guest.find_by_token params[:token]
-    puts @guest.rsvp
   end
 end

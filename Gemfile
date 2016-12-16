@@ -8,6 +8,7 @@ gem 'pg'
 gem 'figaro'
 gem 'autoprefixer-rails'
 gem 'rollbar'
+gem 'stripe'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

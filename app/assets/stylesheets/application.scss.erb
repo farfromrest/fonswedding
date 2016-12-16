@@ -7,6 +7,8 @@
 @import 'fonts';
 @import 'mixins';
 
+@import 'form';
+
 body {
   background: linear-gradient(to right, $brown, $white, $brown);
   font-family: 'Breathe';
@@ -20,7 +22,7 @@ body {
 
 strong {
   color: $jellay;
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 .wrapper {
@@ -58,6 +60,7 @@ strong {
 
 .title,
 .smaller-title,
+.form-title,
 .date {
   font-family: 'BlingtasticScript';
 }
@@ -79,6 +82,11 @@ strong {
   font-size: 2em;
 }
 
+.form-title {
+  font-size: 1.5em;
+  line-height: 1.5;
+}
+
 .date {
   background-image: image-url('left-leaf.svg'), image-url('right-leaf.svg');
   background-size: 33px auto;
@@ -90,11 +98,10 @@ strong {
   padding: 1em 50px;
 }
 
-
+.longer-text,
 .text {
   padding: 1em 0;
   line-height: 1.25;
-  letter-spacing: 1.5px;
 
   a {
     text-decoration: underline;
@@ -107,6 +114,20 @@ strong {
   @media #{$phone} {
     font-size: 0.75em;
   }
+}
+
+.text {
+  letter-spacing: 1.5px;
+}
+
+.rsvp-by-date {
+  padding-bottom: 0.25em;
+}
+
+.longer-text {
+  font-family: Helvetica;
+  font-size: 0.8em;
+  padding: 2em 0;
 }
 
 .address {
@@ -139,44 +160,6 @@ strong {
   background-image: image-url('bee2.svg');
 }
 
-.form-field-row {
-  padding: 0 0 0.5em 0;
-}
-
-.label {
-  color: $tan;
-}
-
-.name-field {
-  color: $black;
-  border: 2px solid $tan;
-  width: 10em;
-  padding: 0.25em;
-  background-color: $white;
-  border-radius: 0.5em;
-  text-indent: 0.25em;
-  &::-webkit-input-placeholder {
-    color: lighten($brown, 5%);
-  }
-}
-
-.radio-button {
-  vertical-align: top;
-  margin: 0.2em 0.15em 0 0.5em;
-}
-
-.rsvp-link, .submit-button {
-  display: inline-block;
-  color: $white;
-  padding: 0.25em 0.8em;
-  background-color: $tan;
-  border-radius: 2em;
-  line-height: 1;
-  letter-spacing: 2px;
-  cursor: pointer;
-  margin: 0.5em 0 0 0;
-}
-
 .details-link {
   display: block;
   margin-top: 1em;
@@ -200,4 +183,13 @@ strong {
     background-size: 90% auto;
     height: 50vw;
   }
+}
+
+.banana-man {
+  @include background-image('banana-man', 'png');
+  background-size: 400px auto;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: block;
+  padding-top: 400px;
 }

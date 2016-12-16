@@ -1,6 +1,6 @@
 <% if @guest.rsvp %>
-  <h1 class="smaller-title">Yippie!</h1>
-  <p class="text">We got your RSVP saved.<br>Cannot wait to see you on <%= ApplicationHelper::WEDDING_DATE.to_formatted_s(:long_ordinal) %>!</p>
+  <p class="longer-text banana-man">We got your RSVP saved.<br>Cannot wait to see you on <strong><%= ApplicationHelper::WEDDING_DATE.to_formatted_s(:long_ordinal) %></strong>!</p>
+
 <% else %>
   <h1 class="smaller-title">Bummer!</h1>
   <p class="text">Sorry to hear you can't make it. If anything does change you can always come back and update your RSVP.</p>

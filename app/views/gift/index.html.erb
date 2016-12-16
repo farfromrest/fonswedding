@@ -1,0 +1,54 @@
+<div class="payment-errors error" style="display: none;"></div>
+<h2 class="smaller-title">Send Us a Gift</h2>
+<p class="longer-text">For our wedding we are not registered anywhere, but wanted to give our guests a way to contribute to our honeymoon.<br>Any gift is super appreciated!</p>
+
+<%= form_tag gift_confirm_path, id: 'payment-form' do %>
+  <div class="form-section">
+    <div class="form-field-row">
+      <label class="large-label" for="name">Who is this from?</label>
+      <%= text_field_tag :name, '', class: 'text-field', required: true, size: 25 %>
+    </div>
+    <div class="form-field-row">
+      <label class="large-label" for="email">Email (for reciept)</label>
+      <%= text_field_tag :email, '', class: 'text-field', required: true, size: 25 %>
+    </div>
+    <div class="form-field-row">
+      <label class="large-label" for="amount">Amount</label>
+      <%= select_tag :amount, options_for_select({'$50' => 50, '$100' => 100, '$150' => 150, 'Other Amount' => 'other'}), class: 'select-field' %>
+      <div class="other-amount-field" style="display: none">$<%= text_field_tag :otherAmount, '', class: 'text-field', required: true, disabled: true, placeholder: '50.01', size: 10 %></div>
+    </div>
+    <div class="form-field-row">
+      <label class="large-label" for="message">Message for bride and groom</label>
+      <%= text_area_tag :message, '', class: 'text-field', required: true, cols: 30, rows: 4 %>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <h3 class="form-title">Payment Information</h3>
+    <div class="form-field-row">
+      <label class="large-label" for="amount">Card Number</label>
+      <input type="text" data-stripe="number" class="text-field" required>
+    </div>
+
+    <div class="form-field-row">
+      <div class="half-row">
+        <label class="large-label">Expiration</label>
+        <input type="text" size="3" data-stripe="exp_month" class="text-field" placeholder="MM" required>
+        <span> / </span>
+        <input type="text" size="3" data-stripe="exp_year" class="text-field" placeholder="YY" required>
+      </div>
+      <div class="half-row">
+        <label class="large-label">CSV</label>
+        <input type="text" size="4" data-stripe="cvc" class="text-field" required>
+      </div>
+    </div>
+  </div>
+
+  <%= submit_tag 'Confirm Gift', class: 'submit-button' %>
+
+<% end %>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+  Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key] %>');
+</script>

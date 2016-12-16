@@ -1,0 +1,76 @@
+.form-section {
+  padding-bottom: 1em;
+}
+
+
+
+.form-field-row {
+  padding: 0 0 0.5em 0;
+}
+
+.half-row {
+  display: inline-block;
+  padding: 0 0.5em;
+}
+
+.other-amount-field {
+  padding: 0.5em 0;
+}
+
+.fake-text-field,
+.label {
+  color: $tan;
+}
+
+.large-label {
+  padding-top: 0.25em;
+  display: block;
+}
+
+.fake-text-field,
+.select-field,
+.text-field {
+  font-family: Helvetica;
+  font-size: 0.8em;
+}
+
+.select-field,
+.text-field {
+  color: $black;
+  border: 2px solid $tan;
+  padding: 0.25em 0.5em;
+  background-color: $white;
+  border-radius: 0.5em;
+}
+
+.text-field {
+  &::-webkit-input-placeholder {
+    color: lighten($brown, 5%);
+  }
+}
+
+.name-field {
+  width: 10em;
+}
+
+.radio-button {
+  vertical-align: top;
+  margin: 0.2em 0.15em 0 0.5em;
+}
+
+.rsvp-link, .submit-button {
+  display: inline-block;
+  color: $white;
+  padding: 0.25em 0.8em;
+  background-color: $tan;
+  border-radius: 2em;
+  line-height: 1;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin: 0.5em 0 0 0;
+
+  &:disabled {
+    cursor: wait;
+    background-color: lighten($brown, 10%);
+  }
+}

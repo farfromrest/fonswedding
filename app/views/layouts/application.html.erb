@@ -15,6 +15,9 @@
 
   <body>
     <div class="wrapper">
+      <% unless current_page? welcome_url %>
+        <%= link_to 'Home', :welcome, class: 'home-link' %>
+      <% end %>
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: name %>
       <% end %>

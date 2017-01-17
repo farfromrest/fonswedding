@@ -3,7 +3,8 @@ Rollbar.configure do |config|
   # To disable in specific environments, set config.enabled=false.
 
   config.access_token = ENV['ROLLBAR_ACCESS_TOKEN']
-  config.client_access_token = ENV['ROLLBAR_CLIENT_ACCESS_TOKEN']
+
+
 
   # Here we'll disable in 'test':
   if Rails.env.test?
@@ -55,4 +56,13 @@ Rollbar.configure do |config|
   # setup for Heroku. See:
   # https://devcenter.heroku.com/articles/deploying-to-a-custom-rails-environment
   config.environment = ENV['ROLLBAR_ENV'] || Rails.env
+
+  config.js_enabled = true
+  config.js_options = {
+    accessToken: ENV['ROLLBAR_CLIENT_ACCESS_TOKEN'],
+    captureUncaught: true,
+    payload: {
+      environment: config.environment
+    }
+  }
 end

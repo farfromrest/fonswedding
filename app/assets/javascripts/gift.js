@@ -1,7 +1,6 @@
 function stripeResponseHandler(status, response) {
   var $form = $('#payment-form');
-
-  if (response.error) {
+  if (status !== 200) {
     $('.payment-errors').text(response.error.message).show();
     $form.find('.submit-button').prop('disabled', false);
   } else {
@@ -19,10 +18,11 @@ $(function() {
   var $form = $('#payment-form');
 
   $form.submit(function(event) {
+    event.preventDefault();
     $('.payment-errors').hide();
     $form.find('.submit-button').prop('disabled', true);
     Stripe.card.createToken($form, stripeResponseHandler);
-    event.preventDefault();
+    return false;
   });
 
   $('#amount').change(function(event) {
@@ -34,4 +34,5 @@ $(function() {
       $('#otherAmount').attr('disabled', 'disabled');
     }
   });
+
 });

@@ -10,8 +10,9 @@
     <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="/favicon-128.png" sizes="128x128" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+    <%= javascript_tag "Stripe.setPublishableKey('#{Rails.configuration.stripe[:publishable_key]}');" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   </head>
 
   <body>

@@ -1,0 +1,90 @@
+@import 'colors';
+
+.seating-table {
+  display: flex;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+
+  &:nth-child(odd) {
+    .seating-table-photo {
+      order: 1;
+    }
+    .location-quote {
+      order: 2;
+      text-align: left;
+    }
+  }
+  &:nth-child(even) {
+    .seating-table-photo {
+      order: 2;
+    }
+    .location-quote {
+      order: 1;
+      text-align: right;
+    }
+  }
+
+}
+
+.location-name {
+  font-family: 'BlingtasticScript';
+  font-size: 1.7em;
+  width: 100%;
+  text-align: center;
+  line-height: 1.4;
+}
+
+
+.guest-names {
+  order: 4;
+  width: 100%;
+  border-top: 1px solid $brown;
+  padding-top: 10px;
+  margin-top: 10px;
+  li {
+    padding: 0 5px;
+    display: inline-block;
+    color: $peanut-butter;
+    &:nth-child(odd) { 
+      color: $jellay;
+    }
+  }
+}
+
+.seating-table-photo {
+  flex: 0 0 50%;
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+    border: 5px solid $jellay;
+  }
+}
+
+.location-quote {
+  flex: 0 0 50%;
+  text-align: left;
+  padding: 0 20px;
+  font-size: 0.7em;
+  line-height: 1.3;
+  font-family: Helvetica;
+
+  .quote {
+    color: #666;
+    font-style: italic;
+  }
+}
+
+
+@media only screen and (max-width : 736px) {
+  .seating-table-photo,
+  .location-quote {
+    flex: 0 0 100%;
+  }
+
+  .seating-table:nth-child(even) .location-quote,
+  .seating-table:nth-child(odd) .location-quote {
+    text-align: justify;
+    padding: 10px 0;
+  }
+}
+

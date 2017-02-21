@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'seating', to: 'seating#index', as: 'seating'
   get 'details', to: 'welcome#details', as: 'details'
   get 'rsvp', to: 'rsvp#index', as: 'rsvp'
   get 'rsvp/confirm/:token', to: 'rsvp#confirm', as: 'confirm'

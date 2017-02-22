@@ -7,10 +7,23 @@
 <h2 class="smaller-title">Only <%= @days %> <%= "day".pluralize(@days) %>!</h2>
 <% end %>
 
-<p class="text">Friday, February 24th, 2017 at 5:30 P.M.</p><div class="address">  <h2 class="smaller-title">Laguna Gloria</h2>  <p class="text"><a href="https://www.google.com/maps/place/The+Contemporary+Austin/@30.3121173,-97.8443622,12z/data=!3m1!5s0x8644caba71cad6a7:0x46b465f8d874b8e0!4m18!1m12!4m11!1m3!2m2!1d-97.774496!2d30.3181931!1m6!1m2!1s0x8644cab081315baf:0xfc1b4a0ddb87ec58!2slaguna+gloria+3809+west!2m2!1d-97.774322!2d30.312136!3m4!1s0x8644cab081315baf:0xfc1b4a0ddb87ec58!8m2!3d30.312136!4d-97.774322" target="_blank">3809 West 35th Street<br>Austin, Texas 78703</a></p></div><p class="text bee">Winter Chic Attire</p><p class="text bee2">Reception to immediately follow</p>
+<p class="text">Friday, February 24th, 2017 at 5:30 P.M.</p>
+
+<div class="address">
+  <h2 class="smaller-title">Laguna Gloria</h2>
+
+  <p class="text"><a href="https://www.google.com/maps/place/The+Contemporary+Austin/@30.3121173,-97.8443622,12z/data=!3m1!5s0x8644caba71cad6a7:0x46b465f8d874b8e0!4m18!1m12!4m11!1m3!2m2!1d-97.774496!2d30.3181931!1m6!1m2!1s0x8644cab081315baf:0xfc1b4a0ddb87ec58!2slaguna+gloria+3809+west!2m2!1d-97.774322!2d30.312136!3m4!1s0x8644cab081315baf:0xfc1b4a0ddb87ec58!8m2!3d30.312136!4d-97.774322" target="_blank">3809 West 35th Street<br>Austin, Texas 78703</a></p>
+
+</div>
+
+<p class="text bee">Winter Chic Attire</p>
+
+<p class="text bee2">Reception to immediately follow</p>
+
 <p class="text">Questions? Please contact either one of us</p>
 <%= link_to 'RSVP', :rsvp, class: 'rsvp-link' %>
 <%= link_to 'Honeymoon Registry', :gift, class: 'details-link' %>
+<%= link_to 'Seating', :seating, class: 'details-link' %>
 
 <div class="note">
   <h2 class="smaller-title">Transportation</h2>

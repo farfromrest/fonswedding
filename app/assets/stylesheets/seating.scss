@@ -86,5 +86,15 @@
     text-align: justify;
     padding: 10px 0;
   }
+
+  .seating-table:nth-child(odd) .seating-table-photo,
+  .seating-table:nth-child(even) .seating-table-photo {
+    order: 1;
+  }
+
+  .seating-table:nth-child(odd) .location-quote,
+  .seating-table:nth-child(even) .location-quote {
+    order: 2;
+  }
 }
 
